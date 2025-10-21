@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #7f7f7f; /* medium gray background same as image */
+  font-family: Arial, sans-serif;
+}
+
+/* ✅ MAIN GRID CONTAINER */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-rows: auto;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Make sure all sections fit nicely in the grid */
+.grid-container > div {
+  font-size: 30px;
+}
+
+/* ✅ NAVBAR — spans full width */
+.navbar {
+  grid-column: 1 / -1; /* span all 10 columns */
+  padding: 20px;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-right: 20px;
+}
+
+.navbar li {
+  padding-inline: 10px;
+}
+
+.navbar a {
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #00ffff;
+}
+
+.navbar #logo {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ffffff;
+  transition: 0.4s ease-in-out;
+}
+
+.navbar #menu {
+  display: none;
+}
+
+/* ✅ IMAGE SECTION — left side of the grid */
+.image-section {
+  grid-column: 1 / 5; /* occupy columns 1–4 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+/* Neon RGB glow border around circular image */
+.image-section img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 1s ease;
+  border: 4px solid transparent;
+  box-shadow: 0 0 20px rgba(0,255,255,0.8),
+              0 0 40px rgba(255,0,255,0.7),
+              0 0 60px rgba(0,255,255,0.6);
+  animation: rgbBorder 4s linear infinite;
+}
+
+.image-section img:hover {
+  transform: rotate(100deg);
+}
+
+/* RGB border animation */
+@keyframes rgbBorder {
+  0% {
+    box-shadow: 0 0 20px rgb(255,0,102),
+                0 0 40px rgb(255,0,102),
+                0 0 60px rgb(255,0,102);
+  }
+  33% {
+    box-shadow: 0 0 20px rgb(0,255,255),
+                0 0 40px rgb(0,255,255),
+                0 0 60px rgb(0,255,255);
+  }
+  66% {
+    box-shadow: 0 0 20px rgb(255,255,0),
+                0 0 40px rgb(255,255,0),
+                0 0 60px rgb(255,255,0);
+  }
+  100% {
+    box-shadow: 0 0 20px rgb(255,0,255),
+                0 0 40px rgb(255,0,255),
+                0 0 60px rgb(255,0,255);
+  }
+}
+
+/* ✅ TEXT SECTION — right side of the grid */
+.text-section {
+  grid-column: 5 / 11; /* occupy columns 5–10 */
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+}
+
+.text-section ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+}
+
+.text-section li:nth-child(1) {
+  font-family: monospace;
+  font-size: 5rem;
+  color: #fff;
+}
+
+.text-section li:nth-child(2) {
+  font-family: sans-serif;
+  font-size: 2rem;
+  color: #e0e0e0;
+}
+
+.text-section .quote {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #1e1e1e;
+}
+
+/* ✅ FOOTER */
+.footer {
+  grid-column: 1 / -1;
+  height: 10vh;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+@media screen and (max-width: 1000px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .image-section {
+    grid-column: 1 / -1;
+  }
+
+  .image-section img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .text-section {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .text-section li:nth-child(1) {
+    font-size: 3rem;
+  }
+
+  .text-section li:nth-child(2) {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .image-section img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .text-section li:nth-child(1) {
+    font-size: 2.5rem;
+  }
+
+  .text-section li:nth-child(2) {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-section img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .text-section li:nth-child(1) {
+    font-size: 2.2rem;
+  }
+
+  .text-section li:nth-child(2) {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-section li:nth-child(1) {
+    font-size: 1.8rem;
+  }
+
+  .text-section li:nth-child(2) {
+    font-size: 1.2rem;
+  }
+}
+
+/* -------------------------------
+   MECHA RGB TEXT EFFECT (CSS ONLY)
+-------------------------------- */
+.text-section li {
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.4s ease;
+}
+
+/* When hovered or clicked, it glows with RGB neon effect */
+.text-section li:hover,
+.text-section li:active {
+  color: #00ffff;
+  text-shadow:
+    0 0 10px rgba(0,255,255,0.8),
+    0 0 20px rgba(0,255,255,0.6),
+    0 0 40px rgba(255,0,255,0.5),
+    0 0 80px rgba(0,255,255,0.4);
+  animation: rgbPulse 2s infinite alternate;
+}
+
+/* RGB pulse animation for mecha glow */
+@keyframes rgbPulse {
+  0% {
+    color: rgb(255, 0, 102);
+    text-shadow: 0 0 10px rgb(255, 0, 102), 0 0 20px rgb(255, 0, 102), 0 0 40px rgb(255, 0, 102);
+  }
+  33% {
+    color: rgb(0, 255, 255);
+    text-shadow: 0 0 10px rgb(0, 255, 255), 0 0 20px rgb(0, 255, 255), 0 0 40px rgb(0, 255, 255);
+  }
+  66% {
+    color: rgb(255, 255, 0);
+    text-shadow: 0 0 10px rgb(255, 255, 0), 0 0 20px rgb(255, 255, 0), 0 0 40px rgb(255, 255, 0);
+  }
+  100% {
+    color: rgb(255, 0, 255);
+    text-shadow: 0 0 10px rgb(255, 0, 255), 0 0 20px rgb(255, 0, 255), 0 0 40px rgb(255, 0, 255);
+  }
+}
