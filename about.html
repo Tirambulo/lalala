@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+  <div class="grid-container">
+
+    <!-- Navbar Toggle Only -->
+    <nav class="navbar">
+      <div id="menu" onclick="toggleMenu()">☰</div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Image Section -->
+    <div class="image-section">
+      <img src="cholo.jpg" alt="Profile Image">
+    </div>
+
+    <!-- Text Section -->
+    <div class="text-section">
+      <ul>
+        <li>About Me</li>
+        <li>Cholo Tirambulo</li>
+        <p class="quote">
+          Hi! I'm a passionate 3rd-year BSInT student who loves creating clean, efficient, and user-friendly systems.
+          My goal is to become a skilled software developer and build solutions that make people's lives easier.
+        </p>
+      </ul>
+    </div>
+
+    <div class="footer"></div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+  </script>
+</body>
+
+</html>
