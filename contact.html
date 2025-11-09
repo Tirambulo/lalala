@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grid-container">
+    <nav class="navbar">
+      <div id="logo">My Portfolio</div>
+      <div id="menu" onclick="toggleMenu()">☰</div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="image-section">
+      <img src="cholo.jpg" alt="Profile Image">
+    </div>
+
+    <div class="text-section">
+      <h1>Contact Me</h1>
+      <p>Get in touch with me using the details below:</p>
+      <ul class="contact-info">
+        <li><strong>Email:</strong> cholowisontirambulo@gmail.com</li>
+        <li><strong>Phone:</strong> +63 994 951 8019</li>
+        <li><strong>Address:</strong> Katacgahan, Bais City</li>
+      </ul>
+    </div>
+
+    <div class="footer"></div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

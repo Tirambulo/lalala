@@ -3,13 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  background-color: #7f7f7f; /* medium gray background same as image */
+  background-color: #7f7f7f; 
   font-family: Arial, sans-serif;
 }
 
-/* ✅ MAIN GRID CONTAINER */
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -18,14 +17,14 @@ body {
   width: 100%;
 }
 
-/* Make sure all sections fit nicely in the grid */
+
 .grid-container > div {
   font-size: 30px;
 }
 
-/* ✅ NAVBAR — spans full width */
+
 .navbar {
-  grid-column: 1 / -1; /* span all 10 columns */
+  grid-column: 1 / -1;
   padding: 20px;
   background-color: #000000;
   color: #ffffff;
@@ -71,9 +70,9 @@ body {
   display: none;
 }
 
-/* ✅ IMAGE SECTION — left side of the grid */
+
 .image-section {
-  grid-column: 1 / 5; /* occupy columns 1–4 */
+  grid-column: 1 / 5; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +80,7 @@ body {
   padding: 4rem 0;
 }
 
-/* Neon RGB glow border around circular image */
+
 .image-section img {
   width: 250px;
   height: 250px;
@@ -123,9 +122,8 @@ body {
   }
 }
 
-/* ✅ TEXT SECTION — right side of the grid */
 .text-section {
-  grid-column: 5 / 11; /* occupy columns 5–10 */
+  grid-column: 5 / 11; 
   display: grid;
   place-content: center;
   padding: 2rem;
@@ -157,13 +155,13 @@ body {
   color: #1e1e1e;
 }
 
-/* ✅ FOOTER */
+
 .footer {
   grid-column: 1 / -1;
   height: 10vh;
 }
 
-/* ---------- MEDIA QUERIES ---------- */
+
 @media screen and (max-width: 1000px) {
   .navbar {
     flex-direction: column;
@@ -254,16 +252,13 @@ body {
   }
 }
 
-/* -------------------------------
-   MECHA RGB TEXT EFFECT (CSS ONLY)
--------------------------------- */
 .text-section li {
   cursor: pointer;
   color: #ffffff;
   transition: all 0.4s ease;
 }
 
-/* When hovered or clicked, it glows with RGB neon effect */
+
 .text-section li:hover,
 .text-section li:active {
   color: #00ffff;
@@ -275,7 +270,7 @@ body {
   animation: rgbPulse 2s infinite alternate;
 }
 
-/* RGB pulse animation for mecha glow */
+
 @keyframes rgbPulse {
   0% {
     color: rgb(255, 0, 102);

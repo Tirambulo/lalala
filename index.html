@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
 </head>
 
 <body>
+    <nav class="navbar">
+        <div id="logo">My Portfolio</div>
+        
+        <!-- Hamburger menu for small screens -->
+        <div id="menu" onclick="toggleMenu()">☰</div>
+        
+        <!-- Navigation links -->
+        <ul id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
 
-    <div class="grid-container">
-        <div class="navbar">
-            <a id="logo" href="">My portfolio</a>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
+        </ul>
+    </nav>
+    
 
-            <span id="menu">&#9776;</span>
-        </div>
-
+        <!-- IMAGE SECTION -->
         <div class="image-section">
-            <img src="cholo.jpg" alt="">
+            <img src="cholo.jpg" alt="Profile Image">
         </div>
 
+        <!-- TEXT SECTION -->
         <div class="text-section">
             <ul>
                 <li>Tirambulo Cholo</li>
-                <li>BSInT 3rd year</li>
+                <li>BSInT 3rd Year</li>
                 <p class="quote">'Impossible' is an excuse given by those who do not try.</p>
             </ul>
         </div>
 
-        <div class="footer">
-        </div>
+        <!-- FOOTER -->
+        <div class="footer"></div>
     </div>
 
+    <!-- TOGGLE MENU SCRIPT -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('show');
+        }
+    </script>
 </body>
 
 </html>
